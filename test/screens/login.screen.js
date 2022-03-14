@@ -6,6 +6,7 @@ class LoginScreen {
     get password(){return $('android=new UiSelector().text("Password").className("android.widget.EditText")')}
     get loginSiteCreds(){return $('id:login_site_creds')}
     get label(){return $('id:label')}
+    get loginEnterPassord(){ return $('id:login_enter_password')}
 
     
     async setStoreAddress(url){
@@ -18,11 +19,14 @@ class LoginScreen {
         await this.loginSiteCreds.click()
     } 
     
-    async login(username){
+    async setUsername(username){
         await this.username.setValue(username)
     }
-    async getLabel(){
-        return await this.label.getText()
+    async setPassword(password){
+        await this.password.setValue(password)
+    }
+    async continueTypeYourPassword(){
+        await this.loginEnterPassord.click()
     }
 }
 
