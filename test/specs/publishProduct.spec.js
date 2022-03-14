@@ -5,7 +5,7 @@ const productsScreen = require("../screens/products.screen");
 
 
 describe('Admin Painel', () => {
-    it('Deve publicar novos produtos ', async() => {
+    it('Should publish new products ', async() => {
         let username = 'gerente'
         let password = 'GD*peToHNJ1#c$sgk08EaYJQ'
         let nome = 'Camiseta Legal pra caramba'
