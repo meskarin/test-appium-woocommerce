@@ -1,7 +1,7 @@
-class HomeScreen {
+class homeScreen {
     
     get enterStoreAddress(){
-        return $('id:button_login_store')   
+        return $('id=button_login_store')   
     }
     
     async goToLogin(){
@@ -11,4 +11,4 @@ class HomeScreen {
     
 }
 
-module.exports = new HomeScreen()
+module.exports = new homeScreen()

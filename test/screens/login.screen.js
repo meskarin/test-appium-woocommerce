@@ -1,12 +1,12 @@
-class LoginScreen {
+class loginScreen {
     
     get StoreAddress(){return $('android.widget.EditText')}
-    get continue(){return $('id:bottom_button')}
+    get continue(){return $('id=bottom_button')}
     get username(){return $('android=new UiSelector().text("Username").className("android.widget.EditText")')}
     get password(){return $('android=new UiSelector().text("Password").className("android.widget.EditText")')}
-    get loginSiteCreds(){return $('id:login_site_creds')}
-    get label(){return $('id:label')}
-    get loginEnterPassord(){ return $('id:login_enter_password')}
+    get loginSiteCreds(){return $('id=login_site_creds')}
+    get label(){return $('id=label')}
+    get loginEnterPassord(){ return $('id=login_enter_password')}
 
     
     async setStoreAddress(url){
@@ -28,6 +28,18 @@ class LoginScreen {
     async continueTypeYourPassword(){
         await this.loginEnterPassord.click()
     }
+
+    async loginStore(user, password){
+        await this.setStoreAddress('http://lojaebac.ebaconline.art.br/')
+        await this.btnContinue()
+        await this.continueWithStoreCredentials()
+        await this.setUsername(user)
+        await this.setPassword(password)
+        await this.btnContinue()
+        await this.continueTypeYourPassword()
+        await this.setPassword(password)
+        await this.btnContinue()
+    }
 }
 
-module.exports = new LoginScreen()
+module.exports = new loginScreen()

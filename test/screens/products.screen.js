@@ -1,5 +1,5 @@
 
-class Products {
+class productsScreen {
     
    
     get addProductButton(){return $('id=addProductButton')}
@@ -53,6 +53,20 @@ class Products {
         await this.snackBar.waitForExist()
         return await this.snackBar.getText()
     }
+    async publishNewProduct(nome,description,valor){
+        await this.addNewProduct()
+        await this.typeNewProduct()
+        await this.typeNameProduct(nome)
+        await this.goToDescriptionProduct()
+        await this.typeDescriptionProduct(description)
+        await this.getBack()
+        await this.goToPriceProduct()
+        await this.tapPriceProduct()
+        await this.typePriceProduct(valor)
+        await this.getBack()
+        await this.publishProduct()
+
+    }
     
 }
-module.exports = new Products()
+module.exports = new productsScreen()

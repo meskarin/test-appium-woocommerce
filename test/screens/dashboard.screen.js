@@ -1,8 +1,8 @@
-class Dashboard {
+class dashboardScreen {
     
     get myStoreLogo(){return $('new UiSelector().text("My store").className("android.view.View")')}
-    get subtitle(){return $('id:toolbar_subtitle')}
-    get Product(){return $('id:products')}
+    get subtitle(){return $('id=toolbar_subtitle')}
+    get Product(){return $('id=products')}
     
     async goToProducts(){
         await this.Product.waitForExist({ timeout: 15000 })
@@ -17,4 +17,4 @@ class Dashboard {
     }
    
 }
-module.exports = new Dashboard()
+module.exports = new dashboardScreen()
